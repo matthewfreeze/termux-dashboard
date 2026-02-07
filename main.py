@@ -66,6 +66,7 @@ def create_system_stats():
 
     table.add_row("Memory", f"{mem.percent}% ({mem.used // (1024**2)}MB / {mem.total // (1024**2)}MB)")
     table.add_row("Storage", f"{disk.used // (1024**3)}GB used / {disk.total // (1024**3)}GB total")
+    table.add_row("Battery", get_battery_info())
     table.add_row("Public IP", get_public_ip())
     
     return Panel(
